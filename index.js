@@ -1,10 +1,12 @@
 const datefns = require('date-fns');
 const myModule = require("./myModule.js");
+const chalk = require("chalk");
+const figlet = require('figlet');
 
 // deliverable pt. 1
-// for (let i = 0; i < myModule.length; i++) {
-//     console.log(myModule[i]);
-// }
+for (let i = 0; i < myModule.length; i++) {
+    console.log(myModule[i]);
+}
 
 // date-fns
 const dateArray = [
@@ -17,3 +19,16 @@ const dateArray = [
 const today = new Date();
 const closestDate = datefns.closestTo(today, dateArray);
 console.log(datefns.format(closestDate, 'MM/dd/yyyy'));
+
+//chalk
+console.log(chalk.underline.bold.blue("this was the closest date to today from the date array"));
+
+//figlet
+figlet('Thomas Gilbert', function(err, data) {
+    if (err) {
+        console.log('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.log(data)
+});
